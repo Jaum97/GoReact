@@ -3,4 +3,4 @@ const sum = (...params) =>
     return item + next
   })
 
-alert(sum(5, 5, 5, 5))
+window.alert(sum(5, 5, 5, 50))
