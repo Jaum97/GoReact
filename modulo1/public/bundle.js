@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("alert('test');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var sum = function sum() {\n  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {\n    params[_key] = arguments[_key];\n  }\n\n  return params.reduce(function (item, next) {\n    return item + next;\n  });\n};\n\nalert(sum(3, 4, 5, 6));\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
