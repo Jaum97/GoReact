@@ -1,6 +1,21 @@
-const sum = (...params) =>
-  params.reduce(function (item, next) {
-    return item + next
-  })
+import React, { Component, Fragment } from 'react'
+import { render } from 'react-dom'
 
-window.alert(sum(5, 5, 5, 50))
+class Button extends Component {
+  render() {
+    return <a href="#">Save</a>
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <h1> test </h1>
+        <Button />
+      </Fragment>
+    )
+  }
+}
+
+render(<App />, document.getElementById('app'))
