@@ -1,42 +1,29 @@
 import React, { Component, Fragment } from 'react'
 import { render } from 'react-dom'
-import PropTypes from 'prop-types'
 
-class Button extends React.Component {
-  static defaultProps = {
-    children: 'Save'
-  }
-
-  static propTypes = {
-    onClick: PropTypes.func.isRequired,
-    children: PropTypes.string
-  }
-
-  render() {
-    return (
-      <a href="#" onClick={this.props.onClick}>
-        {this.props.children}
-      </a>
-    )
-  }
-}
+import Button from './Button'
 
 class App extends Component {
-  handleClick() {
-    window.alert('Button clicked')
+  state = {
+    counter: 0
+  }
+
+  handleClick = () => {
+    // callback function executes only after state has resolved
+    this.setState({ counter: this.state.counter + 1 }, () => {
+      console.log('Test')
+    })
+
+    // this state refers to the current pile state
+    this.setState(state => ({ counter: state.counter + 1 }))
   }
 
   render() {
     return (
       <Fragment>
-        <h1> test </h1>
-        <Button
-          onClick={() => {
-            window.alert('Button 1')
-          }}
-        />
+        <h1> {this.state.counter} </h1>
         <br />
-        <Button onClick={this.handleClick}>Send</Button>
+        <Button onClick={this.handleClick}> Add </Button>
       </Fragment>
     )
   }
