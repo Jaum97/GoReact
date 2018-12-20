@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import GlobalStyle from './styles/global';
+
+const Title = styled.h1`
+  color: #f00;
+  font-size: 32px;
+`;
 
 const App = () => (
-  <div className="App">
-    <h1>Hello World</h1>
-  </div>
+  <Fragment>
+    <GlobalStyle />
+    <div className="App">
+      <Title>Hello World</Title>
+    </div>
+  </Fragment>
 );
 
 export default App;
