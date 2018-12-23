@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.png';
 import { Container, Form } from './styles';
+import CompareList from '../../components/CompareList';
 
 const Main = () => (
   <Container>
@@ -10,6 +11,7 @@ const Main = () => (
       <input type="text" placeholder="usuário/repositório" />
       <button type="submit"> ok </button>
     </Form>
+    <CompareList />
   </Container>
 );
 

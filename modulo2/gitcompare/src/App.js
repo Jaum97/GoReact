@@ -4,10 +4,8 @@ import GlobalStyle from './styles/global';
 
 const App = () => (
   <Fragment>
-    <GlobalStyle>
-      <Main />
+    <Main />
 ;
-    </GlobalStyle>
   </Fragment>
 );
 
