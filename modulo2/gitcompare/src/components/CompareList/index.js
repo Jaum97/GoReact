@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Repository } from './styles';
 
 // const repositories = props.repositories;
@@ -6,7 +7,7 @@ import { Container, Repository } from './styles';
 const CompareList = ({ repositories }) => (
   <Container>
     {repositories.map(repository => (
-      <Repository>
+      <Repository key={repository.id}>
         <header>
           <img src={repository.owner.avatar_url} alt={repository.owner.login} />
           <strong>{repository.name}</strong>
@@ -38,5 +39,22 @@ const CompareList = ({ repositories }) => (
     ))}
   </Container>
 );
+
+CompareList.propTypes = {
+  repositories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.String,
+      owner: PropTypes.shape({
+        login: PropTypes.String,
+        avatar_url: PropTypes.String,
+      }),
+      stargazer_count: PropTypes.number,
+      forks_count: PropTypes.number,
+      open_issues_count: PropTypes.number,
+      pushed_at: PropTypes.String,
+    }),
+  ).isRequired,
+};
 
 export default CompareList;
