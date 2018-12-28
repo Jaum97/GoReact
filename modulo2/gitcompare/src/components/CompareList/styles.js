@@ -18,6 +18,10 @@ export const Repository = styled.div`
   border-radius: 3px;
 
   header {
+    img {
+      width: 64px;
+      max-width: 64px;
+    }
     padding: 30px;
     display: flex;
     flex-direction: column;
