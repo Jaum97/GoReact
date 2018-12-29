@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<h1>Desafio 2</h1><br>
+Nesse desafio você irá melhorar a aplicação que desenvolvemos durante o segundo módulo
+com as seguintes funcionalidades:<br>
+Armazene a lista de repositórios adicionados ao localStorage (https://www.w3schools.c
+om/html/html5_webstorage.asp), ou seja, se a página for atualizada ou fechada/aberta a
+lista de repositórios deve ser a mesma;<br>
+Crie um botão em cada repositório para deletar o mesmo da listagem e remova-o do
+localStorage também;<br>
+Crie um botão em cada repositório para atualizar os dados dele buscando as novas
+informações de stars, forks, last commit, etc;
+
 ## Available Scripts
 
 In the project directory, you can run:
