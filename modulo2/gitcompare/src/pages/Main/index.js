@@ -18,14 +18,12 @@ export default class Main extends Component {
 
     try {
       const { data: repository } = await api.get(`/repos/${repositoryInput}`);
-      console.log(repositories);
       repository.lastCommit = moment(repository.pushed_at).fromNow();
       this.setState({
         repositoryInput: '',
         repositories: [...repositories, repository],
         repositoryError: false,
       });
-      // this.saveToStorage(repositories);
     } catch (err) {
       this.setState({ repositoryError: true });
     }
