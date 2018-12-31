@@ -1,11 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Repository } from './styles';
+import RemoveButton from '../RemoveButton/index';
+
+const saveToStorage = repos => localStorage.setItem('repo-list', JSON.stringify(repos));
+
+// const handleRemove = (repos, repo) => {
+//   saveToStorage(repos.filter(x => x.id !== repo.id));
+//   console.log(repos);
+// };
+
+/* <RemoveButton onClick={handleRemove(repositories, repository)} /> */
 
 const CompareList = ({ repositories }) => (
-  <Container>
+  <Container onLoad={saveToStorage(repositories)}>
     {repositories.map(repository => (
       <Repository key={repository.id}>
+        <RemoveButton onClick={console.log(repositories)} />
         <header>
           <img src={repository.owner.avatar_url} alt={repository.owner.login} />
           <strong>{repository.name}</strong>

@@ -12,22 +12,20 @@ export default class Main extends Component {
     repositories: JSON.parse(localStorage.getItem('repo-list')) || [],
   };
 
-  saveToStorage = repos => localStorage.setItem('repo-list', JSON.stringify(repos));
-
   handleAddRepository = async (e) => {
     const { repositoryInput, repositories } = this.state;
     e.preventDefault();
 
     try {
       const { data: repository } = await api.get(`/repos/${repositoryInput}`);
-
+      console.log(repositories);
       repository.lastCommit = moment(repository.pushed_at).fromNow();
       this.setState({
         repositoryInput: '',
         repositories: [...repositories, repository],
         repositoryError: false,
       });
-      this.saveToStorage(repositories);
+      // this.saveToStorage(repositories);
     } catch (err) {
       this.setState({ repositoryError: true });
     }
