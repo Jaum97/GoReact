@@ -9,7 +9,7 @@ export default class Main extends Component {
   state = {
     repositoryError: false,
     repositoryInput: '',
-    repositories: [],
+    repositories: JSON.parse(localStorage.getItem('repo-list')) || [],
   };
 
   handleAddRepository = async (e) => {
@@ -18,9 +18,7 @@ export default class Main extends Component {
 
     try {
       const { data: repository } = await api.get(`/repos/${repositoryInput}`);
-
       repository.lastCommit = moment(repository.pushed_at).fromNow();
-
       this.setState({
         repositoryInput: '',
         repositories: [...repositories, repository],
