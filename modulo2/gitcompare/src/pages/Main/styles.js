@@ -12,7 +12,6 @@ export const Form = styled.form`
   width: 100%;
   max-width: 400px;
   display: flex;
-
   input {
     flex: 1;
     height: 55px;
@@ -21,10 +20,10 @@ export const Form = styled.form`
     font-size: 18px;
     color: #444;
     border-radius: 3px;
-
-    border: ${props => (props.withError ? '2px solid #F00' : 0)};
+    border: ${props => (props.withError ? '2px solid #f00' : 0)};
   }
   button {
+    width: 80px;
     height: 55px;
     padding: 0 20px;
     margin-left: 10px;
@@ -33,8 +32,7 @@ export const Form = styled.form`
     border: 0;
     font-size: 20px;
     font-weight: bold;
-    border: 3px;
-
+    border-radius: 3px;
     &:hover {
       background: #52d89f;
     }
