@@ -1,8 +1,14 @@
 export const addFavoriteRequest = repository => ({
   type: "ADD_FAVORITE_REQUEST",
-  payload: { repository },
+  payload: { repository }
 });
+
 export const addFavoriteSuccess = data => ({
   type: "ADD_FAVORITE_SUCCESS",
-  payload: { data },
+  payload: { data }
+});
+
+export const addFavoriteFailure = error => ({
+  type: "ADD_FAVORITE_FAILURE",
+  payload: { error }
 });

@@ -35,7 +35,7 @@ class Main extends Component {
 
     this.setState({ repositoryInput: "" });
   };
-
+  /**/
   render() {
     return (
       <Fragment>
@@ -48,6 +48,10 @@ class Main extends Component {
           <button type="submit">Add</button>
 
           {this.props.favorites.loading && <span>Carregando...</span>}
+
+          {!!this.props.favorites.error && (
+            <span style={{ color: "#f00" }}>{this.props.favorites.error}</span>
+          )}
         </form>
 
         <ul>
